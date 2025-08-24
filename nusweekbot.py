@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import re
 import json
 from typing import Dict, Optional, Tuple
+import os
 
 class NUSCalendarFetcher:
     """Fetches and parses NUS academic calendar automatically"""
@@ -462,7 +463,7 @@ async def handle_message(update: Update, context):
 def main():
     """Start the bot"""
     # Replace with your bot token from BotFather
-    TOKEN = "8427402095:AAGdRIcLLcROWjXYthqHM9OJTFI64ucdLP8"
+    TOKEN = os.getenv("BOT_TOKEN")
     
     # Create application
     app = Application.builder().token(TOKEN).build()
